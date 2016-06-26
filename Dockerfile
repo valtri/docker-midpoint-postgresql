@@ -32,4 +32,5 @@ RUN rm config-repo.txt
 
 RUN rm -fv /var/opt/midpoint/midpoint*.db
 
+RUN mv /docker-entry.sh /docker-entry-base.sh
 COPY docker-entry.sh /
