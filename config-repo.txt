@@ -1,0 +1,5 @@
+repositoryServiceFactoryClass com.evolveum.midpoint.repo.sql.SqlRepositoryFactory
+database             postgresql
+jdbcUsername         midpoint
+jdbcPassword         changeit
+jdbcUrl              jdbc:postgresql://localhost/midpoint

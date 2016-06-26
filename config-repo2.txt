@@ -1,0 +1,8 @@
+repositoryServiceFactoryClass com.evolveum.midpoint.repo.sql.SqlRepositoryFactory
+embedded             false
+driverClassName      org.postgresql.Driver
+jdbcUsername         midpoint
+jdbcPassword         changeit
+jdbcUrl              jdbc:postgresql://localhost/midpoint
+hibernateDialect     com.evolveum.midpoint.repo.sql.util.MidPointPostgreSQLDialect
+hibernateHbm2ddl     validate
