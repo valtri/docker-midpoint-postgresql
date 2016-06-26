@@ -15,14 +15,15 @@ RUN apt-get update && apt-get install -y \
 
 RUN ln -s /usr/share/java/postgresql.jar /var/lib/tomcat8/lib/
 # for repo-ninja
-RUN ln -s /usr/share/java/postgresql.jar /root/midpoint-${v}/lib/
+RUN ln -s /usr/share/java/postgresql.jar /opt/midpoint-${v}/lib/
 
 ENV PATH $PATH:/usr/lib/postgresql/9.4/bin
+RUN useradd -r -s /bin/bash midpoint
 RUN pass='changeit' \
 && service postgresql start \
 && sudo -u postgres psql -U postgres postgres -c "CREATE USER midpoint password '${pass}'" \
 && sudo -u postgres createdb --owner=midpoint midpoint \
-&& sudo -u postgres psql midpoint < midpoint-${v}/${schema}
+&& sudo -u midpoint psql midpoint < /opt/midpoint-${v}/${schema}
 
 RUN xmlstarlet ed --inplace --update '/configuration/midpoint/repository' --value '' /var/opt/midpoint/config.xml
 COPY config-repo.txt .
