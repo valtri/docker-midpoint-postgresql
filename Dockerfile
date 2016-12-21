@@ -1,9 +1,8 @@
 FROM valtri/docker-midpoint:latest
 MAINTAINER František Dvořák <valtri@civ.zcu.cz>
 
-ENV v 3.4.1
-#ENV schema config/sql/midpoint/3.4/postgresql/postgresql-3.4.sql
-ENV schema config/sql/_all/postgresql-3.4.1-all.sql
+ENV v 3.5
+ENV schema config/sql/_all/postgresql-3.5-all.sql
 
 WORKDIR /root
 
