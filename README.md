@@ -10,3 +10,7 @@ This image adds PostgreSQL repository support.
 
     docker pull valtri/docker-midpoint-postgresql
     docker run -itd --name midpoint valtri/docker-midpoint-postgresql
+
+# Tags
+
+* **latest**: midPoint 3.6
