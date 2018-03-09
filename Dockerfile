@@ -1,8 +1,8 @@
-FROM valtri/docker-midpoint:3.6.1
+FROM valtri/docker-midpoint:3.7.1
 MAINTAINER František Dvořák <valtri@civ.zcu.cz>
 
-ENV v 3.6.1
-ENV schema config/sql/_all/postgresql-3.6-all.sql
+ENV v 3.7.1
+ENV schema config/sql/_all/postgresql-3.7-all.sql
 
 WORKDIR /root
 
