@@ -19,10 +19,11 @@ RUN useradd -r -s /bin/bash midpoint
 RUN wget -nv https://raw.githubusercontent.com/Evolveum/midpoint/v${v}/${schema}
 RUN pass='changeit' \
 && service postgresql start \
+&& cd /var/lib/postgresql \
 && sudo -u postgres psql -U postgres postgres -c "CREATE USER midpoint password '${pass}'" \
 && sudo -u postgres createdb --owner=midpoint --encoding=UTF8 --locale=C.UTF-8 midpoint \
 && sudo -u postgres psql -U postgres postgres -c "ALTER DATABASE midpoint CONNECTION LIMIT -1" \
-&& sudo -u midpoint psql midpoint < `basename ${schema}`
+&& sudo -u midpoint psql midpoint < /root/`basename ${schema}`
 
 RUN xmlstarlet ed --inplace --update '/configuration/midpoint/repository' --value '' /var/opt/midpoint/config.xml
 COPY config-repo.txt .
