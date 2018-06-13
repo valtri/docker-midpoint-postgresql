@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN ln -s /usr/share/java/postgresql.jar /var/lib/tomcat8/lib/
 
-ENV PATH $PATH:/usr/lib/postgresql/9.4/bin
 RUN useradd -r -s /bin/bash midpoint
 RUN wget -nv https://raw.githubusercontent.com/Evolveum/midpoint/v${v}/${schema}
 RUN pass='changeit' \
