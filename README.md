@@ -13,4 +13,4 @@ This image adds PostgreSQL repository support.
 
 # Tags
 
-* **latest**: midPoint 3.7.1
+* **latest**: midPoint 3.7.2
